@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import papaImage from "./assets/papa.jpg";
 
 const SERVICES = [
     {
@@ -192,7 +193,7 @@ function Hero() {
             <div style={{ position: "absolute", bottom: "5%", left: "0%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(74,222,128,0.06) 0%, transparent 70%)", pointerEvents: "none" }} />
             <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(rgba(74,222,128,0.04) 1px, transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
 
-            <div style={{ maxWidth: 1200, margin: "0 auto", width: "100%" }}>
+            <div style={{ maxWidth: 1200, margin: "0 auto", width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
                 <div style={{ maxWidth: 720 }}>
                     <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)", borderRadius: 100, padding: "6px 16px", marginBottom: 32 }}>
                         <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#4ade80", boxShadow: "0 0 8px #4ade80", display: "inline-block" }} />
@@ -225,6 +226,26 @@ function Hero() {
                                 <div style={{ color: "#6ee7b7", fontSize: "0.8rem", fontFamily: "'Raleway', sans-serif", fontWeight: 500, letterSpacing: "0.04em", marginTop: 2 }}>{l}</div>
                             </div>
                         ))}
+                    </div>
+                </div>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <div style={{ position: "relative", width: "100%", maxWidth: 450 }}>
+                        <div style={{ position: "absolute", top: -20, right: -20, width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(34,197,94,0.15) 0%, transparent 70%)", pointerEvents: "none" }} />
+                        <img 
+                            src={papaImage} 
+                            alt="Наш засновник" 
+                            style={{ 
+                                width: "100%", 
+                                borderRadius: 24, 
+                                boxShadow: "0 20px 60px rgba(34,197,94,0.25), inset 0 1px 0 rgba(255,255,255,0.1)",
+                                border: "1px solid rgba(74,222,128,0.2)",
+                                display: "block",
+                                transition: "transform 0.3s ease",
+                                cursor: "pointer"
+                            }}
+                            onMouseEnter={e => e.target.style.transform = "scale(1.02) translateY(-5px)"}
+                            onMouseLeave={e => e.target.style.transform = "scale(1) translateY(0)"}
+                        />
                     </div>
                 </div>
             </div>
